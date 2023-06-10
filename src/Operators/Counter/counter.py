@@ -1,22 +1,30 @@
+from Operators.Constants \
+    import \
+    one, \
+    zero
 
 
 class Counter:
     def __init__(self):
-        self.value: int = 0
+        self.value: int = zero()
+
+    def __del__(self):
+        del self.value
+
 
     def increment(self):
         self.increase(
-            1
+            one()
         )
 
     def decrement(self):
         self.decrease(
-            1
+            one()
         )
 
     def reset(self):
         self.set_value(
-            0
+            zero()
         )
 
     def increase(
@@ -35,11 +43,6 @@ class Counter:
             self.get_value() - by_value
         )
 
-    def get_value_as_string(self) -> str:
-        return str(
-            self.get_value()
-        )
-
     def get_value(self) -> int:
         return self.value
 
@@ -48,3 +51,9 @@ class Counter:
             value: int
     ) -> None:
         self.value = value
+
+    def get_value_as_string(self) -> str:
+        return str(
+            self.get_value()
+        )
+
