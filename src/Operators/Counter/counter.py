@@ -11,7 +11,6 @@ class Counter:
     def __del__(self):
         del self.value
 
-
     def increment(self):
         self.increase(
             one()
